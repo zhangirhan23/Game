@@ -1,0 +1,24 @@
+{
+  "name": "colony-zero",
+  "version": "1.0.0",
+  "description": "Colony Zero — колония на планете Нуль",
+  "main": "main.js",
+  "author": "Colony Zero",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.colonyzero.game",
+    "productName": "Colony Zero",
+    "files": ["main.js", "game/**/*"],
+    "directories": { "output": "dist" },
+    "win": { "target": [{ "target": "portable", "arch": ["x64"] }] },
+    "portable": { "artifactName": "ColonyZero-${version}.exe" }
+  }
+}
